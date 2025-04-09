@@ -18,7 +18,7 @@ export class Triangle extends Rectangle implements iDrawable {
         })
         this.points.push({
             x: -this.width / 2,
-            y: -this.height / 2,
+            y: this.height / 2,
         })
     }
 

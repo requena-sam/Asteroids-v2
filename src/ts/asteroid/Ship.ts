@@ -2,8 +2,10 @@ import {Triangle} from "../framework25/shapes/Triangle";
 import {iPosition} from "../framework25/types/iPosition";
 import {iColor} from "../framework25/types/iColor";
 import {settings} from "./settings";
+import {iAnimatable} from "../framework25/types/iAnimatable";
 
-export class Ship extends Triangle {
+export class Ship extends Triangle implements iAnimatable {
+
     private canvas: HTMLCanvasElement;
 
     constructor(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
@@ -14,4 +16,8 @@ export class Ship extends Triangle {
         this.canvas = canvas;
     }
 
+    animate(): void {
+        this.position.x++;
+        this.draw();
+    }
 }
